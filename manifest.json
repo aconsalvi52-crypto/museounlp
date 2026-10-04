@@ -2,7 +2,7 @@
   "name": "Red de Museos UNLP",
   "short_name": "Red Museos UNLP",
   "start_url": "./",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#050505",
   "theme_color": "#050505",
   "lang": "es-AR",
