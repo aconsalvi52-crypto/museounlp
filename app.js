@@ -114,7 +114,7 @@ modal.addEventListener('click', e => {
 });
 
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => { }));
 }
 
 // ----------------------------------------------------
@@ -127,7 +127,7 @@ function startFullscreenTimer() {
   fullscreenTimer = setTimeout(() => {
     const docEl = document.documentElement;
     const requestFs = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-    
+
     if (requestFs) {
       requestFs.call(docEl).then(() => {
         showToast('Pantalla completa activada');
