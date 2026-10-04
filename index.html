@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Red de Museos UNLP — prototipo funcional">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <title>Red de Museos UNLP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app" class="app-shell" aria-label="Red de Museos UNLP">
+    <!-- Splash -->
+    <section class="screen splash-screen active" data-screen="splash">
+      <img src="assets/screens/inicio.png" alt="Red de Museos UNLP" class="screen-image splash-image">
+      <button class="hotspot splash-skip" data-action="go-home" aria-label="Continuar"></button>
+    </section>
+
+    <!-- Image-based high fidelity screens. Interactive elements are overlaid as real HTML. -->
+    <section class="screen" data-screen="home">
+      <img src="assets/screens/home.png" alt="Pantalla Home" class="screen-image">
+      <div class="hotspot home-explore" data-screen-target="map-recorridos" aria-label="Explorá los museos"></div>
+      <div class="hotspot home-nearby" data-screen-target="map-recorridos" aria-label="Encontrá uno cerca"></div>
+      <div class="hotspot home-agenda" data-screen-target="agenda" aria-label="Qué está pasando"></div>
+      <div class="hotspot home-discover" data-screen-target="discover" aria-label="Descubrí algo nuevo"></div>
+      <div class="hotspot home-search" data-action="search"></div>
+      <div class="hotspot category-1" data-category="Arte y cultura"></div>
+      <div class="hotspot category-2" data-category="Ciencia y tecnología"></div>
+      <div class="hotspot category-3" data-category="Naturaleza y vida"></div>
+      <div class="hotspot category-4" data-category="Memoria y patrimonio"></div>
+      <div class="bottom-nav-overlay"></div>
+      <button class="nav-hit nav-home" data-screen-target="home" aria-label="Inicio"></button>
+      <button class="nav-hit nav-map" data-screen-target="map-recorridos" aria-label="Mapa"></button>
+      <button class="nav-hit nav-camera" data-screen-target="camera" aria-label="Cámara"></button>
+      <button class="nav-hit nav-points" data-screen-target="points" aria-label="Puntos"></button>
+      <button class="nav-hit nav-profile" data-screen-target="profile" aria-label="Perfil"></button>
+    </section>
+
+    <section class="screen" data-screen="agenda">
+      <img src="assets/screens/agenda.png" alt="Agenda" class="screen-image">
+      <div class="hotspot agenda-first" data-screen-target="agenda-detail" aria-label="Taller de dibujo"></div>
+      <div class="hotspot agenda-row-2" data-action="soon"></div>
+      <div class="hotspot agenda-row-3" data-action="soon"></div>
+      <div class="hotspot agenda-row-4" data-action="soon"></div>
+      <button class="nav-hit nav-home" data-screen-target="home" aria-label="Inicio"></button>
+      <button class="nav-hit nav-map" data-screen-target="map-recorridos" aria-label="Mapa"></button>
+      <button class="nav-hit nav-camera" data-screen-target="camera" aria-label="Cámara"></button>
+      <button class="nav-hit nav-points" data-screen-target="points" aria-label="Puntos"></button>
+      <button class="nav-hit nav-profile" data-screen-target="profile" aria-label="Perfil"></button>
+    </section>
+
+    <section class="screen" data-screen="agenda-detail">
+      <img src="assets/screens/agenda-detail.png" alt="Detalle de actividad" class="screen-image">
+      <div class="hotspot back-top" data-screen-target="agenda"></div>
+      <div class="hotspot enroll-button" data-action="enroll"></div>
+      <button class="nav-hit nav-home" data-screen-target="home" aria-label="Inicio"></button>
+      <button class="nav-hit nav-map" data-screen-target="map-recorridos" aria-label="Mapa"></button>
+      <button class="nav-hit nav-camera" data-screen-target="camera" aria-label="Cámara"></button>
+      <button class="nav-hit nav-points" data-screen-target="points" aria-label="Puntos"></button>
+      <button class="nav-hit nav-profile" data-screen-target="profile" aria-label="Perfil"></button>
+    </section>
+
+    <section class="screen" data-screen="discover">
+      <img src="assets/screens/descubrir.png" alt="Descubrir" class="screen-image">
+      <div class="hotspot surprise-button" data-action="surprise"></div>
+      <button class="nav-hit nav-home" data-screen-target="home" aria-label="Inicio"></button>
+      <button class="nav-hit nav-map" data-screen-target="map-recorridos" aria-label="Mapa"></button>
+      <button class="nav-hit nav-camera" data-screen-target="camera" aria-label="Cámara"></button>
+      <button class="nav-hit nav-points" data-screen-target="points" aria-label="Puntos"></button>
+      <button class="nav-hit nav-profile" data-screen-target="profile" aria-label="Perfil"></button>
+    </section>
+
+    <section class="screen" data-screen="map-museo">
+      <img src="assets/screens/mapa-museo.png" alt="Mapa con Museo de Astronomía seleccionado" class="screen-image">
+      <div class="hotspot map-close" data-screen-target="map-recorridos"></div>
+      <div class="hotspot route-button" data-action="directions"></div>
+      <div class="hotspot map-toggle" data-screen-target="map-recorridos"></div>
+      <button class="nav-hit nav-home" data-screen-target="home" aria-label="Inicio"></button>
+      <button class="nav-hit nav-map" data-screen-target="map-recorridos" aria-label="Mapa"></button>
+      <button class="nav-hit nav-camera" data-screen-target="camera" aria-label="Cámara"></button>
+      <button class="nav-hit nav-points" data-screen-target="points" aria-label="Puntos"></button>
+      <button class="nav-hit nav-profile" data-screen-target="profile" aria-label="Perfil"></button>
+    </section>
+
+    <section class="screen" data-screen="map-recorridos">
+      <img src="assets/screens/mapa-recorridos.png" alt="Mapa y recorridos" class="screen-image">
+      <div class="hotspot map-tab" data-screen-target="map-museo"></div>
+      <div class="hotspot map-area-click" data-screen-target="map-museo"></div>
+      <div class="hotspot route-card-1" data-screen-target="route-art"></div>
+      <button class="nav-hit nav-home" data-screen-target="home" aria-label="Inicio"></button>
+      <button class="nav-hit nav-map" data-screen-target="map-recorridos" aria-label="Mapa"></button>
+      <button class="nav-hit nav-camera" data-screen-target="camera" aria-label="Cámara"></button>
+      <button class="nav-hit nav-points" data-screen-target="points" aria-label="Puntos"></button>
+      <button class="nav-hit nav-profile" data-screen-target="profile" aria-label="Perfil"></button>
+    </section>
+
+    <section class="screen" data-screen="route-art">
+      <img src="assets/screens/recorrido-arte.png" alt="Recorrido Arte y cultura" class="screen-image">
+      <div class="hotspot back-top" data-screen-target="map-recorridos"></div>
+      <div class="hotspot favorite-route" data-action="favorite"></div>
+      <div class="hotspot start-route" data-action="start-route"></div>
+      <button class="nav-hit nav-home" data-screen-target="home" aria-label="Inicio"></button>
+      <button class="nav-hit nav-map" data-screen-target="map-recorridos" aria-label="Mapa"></button>
+      <button class="nav-hit nav-camera" data-screen-target="camera" aria-label="Cámara"></button>
+      <button class="nav-hit nav-points" data-screen-target="points" aria-label="Puntos"></button>
+      <button class="nav-hit nav-profile" data-screen-target="profile" aria-label="Perfil"></button>
+    </section>
+
+    <section class="screen" data-screen="profile">
+      <img src="assets/screens/perfil.png" alt="Perfil" class="screen-image">
+      <div class="hotspot profile-settings" data-action="settings"></div>
+      <div class="hotspot profile-edit" data-action="edit-profile"></div>
+      <div class="hotspot profile-achievements" data-action="achievements"></div>
+      <button class="nav-hit nav-home" data-screen-target="home" aria-label="Inicio"></button>
+      <button class="nav-hit nav-map" data-screen-target="map-recorridos" aria-label="Mapa"></button>
+      <button class="nav-hit nav-camera" data-screen-target="camera" aria-label="Cámara"></button>
+      <button class="nav-hit nav-points" data-screen-target="points" aria-label="Puntos"></button>
+      <button class="nav-hit nav-profile" data-screen-target="profile" aria-label="Perfil"></button>
+    </section>
+
+    <section class="screen" data-screen="points">
+      <img src="assets/screens/puntos.png" alt="Puntos" class="screen-image">
+      <div class="hotspot points-levels" data-action="levels"></div>
+      <div class="hotspot points-rewards" data-action="rewards"></div>
+      <button class="nav-hit nav-home" data-screen-target="home" aria-label="Inicio"></button>
+      <button class="nav-hit nav-map" data-screen-target="map-recorridos" aria-label="Mapa"></button>
+      <button class="nav-hit nav-camera" data-screen-target="camera" aria-label="Cámara"></button>
+      <button class="nav-hit nav-points" data-screen-target="points" aria-label="Puntos"></button>
+      <button class="nav-hit nav-profile" data-screen-target="profile" aria-label="Perfil"></button>
+    </section>
+
+    <!-- Live camera screen -->
+    <section class="screen camera-screen" data-screen="camera">
+      <iframe src="https://thomascons-boop.github.io/ar-magic-creator/?ar=true&id=fb5b2cdd-0bf0-4251-973d-c56b9fe58a3b" style="width:100%; height:100%; border:none;" allow="camera; microphone; fullscreen; display-capture; geolocation; accelerometer; gyroscope; magnetometer"></iframe>
+      <div class="camera-bottom">
+        <button class="camera-shutter" data-action="take-photo" aria-label="Tomar foto"><span></span></button>
+      </div>
+      <!-- Barra de navegación superpuesta -->
+      <button class="nav-hit nav-home" data-screen-target="home" aria-label="Inicio"></button>
+      <button class="nav-hit nav-map" data-screen-target="map-recorridos" aria-label="Mapa"></button>
+      <button class="nav-hit nav-camera" data-screen-target="camera" aria-label="Cámara"></button>
+      <button class="nav-hit nav-points" data-screen-target="points" aria-label="Puntos"></button>
+      <button class="nav-hit nav-profile" data-screen-target="profile" aria-label="Perfil"></button>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="modal" class="modal">
+    <div class="modal-card">
+      <button class="modal-close" data-action="close-modal">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </dialog>
+
+  <canvas id="snapshotCanvas" hidden></canvas>
+
+  <script src="app.js"></script>
+</body>
+</html>
